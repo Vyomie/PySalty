@@ -1,3 +1,4 @@
+![banner](assets/banner.png)
 # PySalty (Python Structural Architecture Layout Tool)
 
 PySalty is a lightweight Python library for visualizing PyTorch neural network architectures as clean, publication ready diagrams.
@@ -40,7 +41,7 @@ pip install pysalty
 
 ```bash
 import torch.nn as nn
-from salt import Visualize, PaperTheme
+from salt import Visualize, PaperTheme, DarkTheme
 
 class SimpleNet(nn.Module):
     def __init__(self):
@@ -48,23 +49,31 @@ class SimpleNet(nn.Module):
         self.Stem = nn.Sequential(
             nn.Conv2d(3, 64, 3),
             nn.ReLU(),
+            nn.Conv2d(3, 64, 3),
+            nn.ReLU(),
+            nn.Conv2d(3, 64, 3),
         )
         self.Head = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Flatten(),
             nn.Linear(64, 10),
+            nn.ReLU(),
+            nn.Conv2d(3, 64, 3),
+            nn.ReLU(),
+            nn.Conv2d(3, 64, 3),
         )
+        self.Custom_Layer = nn.Sequential(nn.Flatten(), nn.AdaptiveAvgPool1d(1), nn.Flatten())
 
 model = SimpleNet()
 
 Visualize(
     model,
-    theme=PaperTheme,
+    theme=DarkTheme,
     save_path="model.png"
 )
 ```
-
 This produces a clean architecture diagram suitable for papers or slides.
+![example](assets/example-pysalty.png)
 
 ---
 
@@ -272,3 +281,4 @@ These decisions are intentional to keep diagrams clean and readable.
 ## Contributing
 
 Contributions are welcome, including new themes, layout improvements, export formats, and documentation improvements.
+
