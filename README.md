@@ -22,6 +22,7 @@ PySalty focuses on clarity and aesthetics rather than training, execution, or gr
 * Fully customizable colors, fonts, and layout
 * High resolution PNG export
 * Zero dependency on model execution
+* No arrows or ports for clean publication ready figures
 
 ---
 
@@ -125,7 +126,7 @@ If a module is not an nn.Sequential, it is drawn as a single block labeled by it
 
 ## Built in Themes
 
-PySalty includes several ready to use themes.
+PySalty includes several ready to use themes defined in salt.theme.
 
 ### DarkTheme
 
@@ -133,6 +134,30 @@ Dark background with soft purple highlights. Suitable for presentations and scre
 
 ```bash
 from salt import DarkTheme
+```
+
+### LightTheme
+
+Clean white background with subtle gray outlines. Suitable for documentation.
+
+```bash
+from salt import LightTheme
+```
+
+### PaperTheme
+
+Pure black and white styling with sharp corners and thinner edges. Recommended for research papers and LaTeX figures.
+
+```bash
+from salt import PaperTheme
+```
+
+### DraculaTheme
+
+Dark purple background with neon accents inspired by the Dracula color palette.
+
+```bash
+from salt import DraculaTheme
 ```
 
 ---
@@ -169,7 +194,7 @@ from salt import DraculaTheme
 
 ## Creating your own theme
 
-You can fully customize the appearance by creating a Theme object.
+You can fully customize the appearance by creating a Theme object. All styling options are defined in salt.theme.Theme.
 
 ```bash
 from salt import Theme
@@ -184,9 +209,9 @@ MyTheme = Theme(
     ChildFill="#1C313A",
 
     FontFamily="Times New Roman",
-    FontSize=11,
+    FontSize=12,
     TitleFontSize=13,
-    FontWeight="bold",
+    FontWeight="regular",
 
     CornerRadius=0.3,
     EdgeWidth=2.5,
