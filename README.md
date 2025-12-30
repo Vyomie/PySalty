@@ -171,36 +171,6 @@ from salt import DraculaTheme
 
 ---
 
-### LightTheme
-
-Clean white background with subtle gray outlines. Suitable for documentation.
-
-```bash
-from salt import LightTheme
-```
-
----
-
-### PaperTheme
-
-Pure black and white styling with sharp corners and thinner edges. Recommended for research papers and LaTeX figures.
-
-```bash
-from salt import PaperTheme
-```
-
----
-
-### DraculaTheme
-
-Dark purple background with neon accents inspired by the Dracula color palette.
-
-```bash
-from salt import DraculaTheme
-```
-
----
-
 ## Creating your own theme
 
 You can fully customize the appearance by creating a Theme object. All styling options are defined in salt.theme.Theme.
@@ -281,4 +251,5 @@ These decisions are intentional to keep diagrams clean and readable.
 ## Contributing
 
 Contributions are welcome, including new themes, layout improvements, export formats, and documentation improvements.
+
 
